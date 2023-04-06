@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chailong.dao.DepartmentDao">
+    <resultMap id="demap" type="com.chailong.pojo.Department">
+        <result property="staffid" column="staffid"></result>
+        <result property="deptid" column="deptid"></result>
+        <result property="staffoffice" column="staffoffice"></result>
+    </resultMap>
+    <select id="getdepartmentinfo" resultMap="demap">
+        select * from Employ_information;
+    </select>
+    <select id="getheaderinfo" resultMap="demap">
+        select * from Employ_information where deptid=#{deptid} and staffoffice=#{staffoffice};
+    </select>
+    <update id="deupdate">
+        update Employ_information set deptid=#{deptid},staffoffice=#{staffoffice}
+        where staffid=#{staffid}
+    </update>
+    <insert id="adddeInformation">
+        insert into Employ_information(staffid,deptid,staffoffice)
+        values
+        (
+        #{deinfo.staffid},
+        #{deinfo.deptid},
+        #{deinfo.staffoffice}
+        )
+    </insert>
+
+</mapper>

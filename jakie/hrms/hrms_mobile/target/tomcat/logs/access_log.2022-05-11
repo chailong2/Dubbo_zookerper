@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [11/May/2022:00:09:58 +0800] "GET /pages/setmeal6.jsp HTTP/1.1" 200 3920 http-bio-8085-exec-5 12
+0:0:0:0:0:0:0:1 - - [11/May/2022:00:09:58 +0800] "POST /tourist/applyconse HTTP/1.1" 200 208 http-bio-8085-exec-6 36

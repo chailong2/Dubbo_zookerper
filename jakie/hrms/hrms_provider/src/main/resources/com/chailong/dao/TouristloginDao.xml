@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chailong.dao.TouristloginDao">
+    <resultMap id="touristlog" type="com.chailong.pojo.Touristlogin">
+        <result property="account" column="account"></result>
+        <result property="password" column="password"></result>
+    </resultMap>
+    <select id="gettouristinfobyaccount" resultType="int">
+        select count(*) from Visitors_login where account=#{account};
+    </select>
+    <insert id="addnewtouristlofinfo">
+        insert into Visitors_login(account,password)
+        values
+        (#{account},#{password})
+    </insert>
+    <select id="vertifytourist" resultMap="touristlog">
+        select * from Visitors_login where account=#{account} and password=#{password};
+    </select>
+</mapper>

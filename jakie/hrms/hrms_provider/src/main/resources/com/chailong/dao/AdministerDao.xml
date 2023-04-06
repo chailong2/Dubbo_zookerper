@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chailong.dao.AdministerDao">
+    <resultMap id="administermap" type="com.chailong.pojo.Administer">
+        <result property="administername" column="administername"></result>
+        <result property="account" column="account"></result>
+        <result property="password" column="password"></result>
+    </resultMap>
+    <select id="getadmininfobyaccount" resultMap="administermap">
+         select * from administer where account=#{account};
+    </select>
+    <select id="getalladmin" resultMap="administermap">
+        select * from administer;
+    </select>
+    <update id="updateadmin">
+        update administer set administername=#{admin.administername},password=#{admin.password}
+        where account=#{admin.account}
+    </update>
+    <insert id="addnewadminInformation">
+        insert into administer(administername,account,password)
+        values
+        (#{admininfo.administername},#{admininfo.account},#{admininfo.password})
+    </insert>
+    <delete id="deleteadmininfo">
+        delete from administer
+        where account=#{account};
+    </delete>
+</mapper>

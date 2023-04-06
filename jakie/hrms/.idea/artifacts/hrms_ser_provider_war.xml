@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="hrms_ser_provider:war">
+    <output-path>$PROJECT_DIR$/hrms_ser_provider/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>hrms_ser_provider</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="hrms_ser_provider-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="hrms_ser_provider:war exploded" />
+    </root>
+  </artifact>
+</component>

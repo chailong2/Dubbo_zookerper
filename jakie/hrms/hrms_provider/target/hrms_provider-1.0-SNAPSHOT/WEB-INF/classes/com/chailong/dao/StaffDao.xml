@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chailong.dao.StaffDao">
+    <resultMap id="staffmap" type="com.chailong.pojo.StaffInformation">
+        <result property="staffId" column="staffId"></result>
+        <result property="staffname" column="staffname"></result>
+        <result property="staffage" column="staffage"></result>
+        <result property="staffsex" column="staffsex"></result>
+        <result property="educationBackground" column="educationBackground"></result>
+        <result property="idcard" column="idcard"></result>
+        <result property="address" column="address"></result>
+        <result property="duty" column="duty"></result>
+        <result property="phonenumber" column="phonenumber"></result>
+    </resultMap>
+    <!--新增-->
+    <insert id="addnewstaffInformation">
+        insert into Staff_information(staffname,staffage,staffsex,educationBackground,duty,idcard,address,phonenumber)
+        values
+        (#{staffInformation.staffname},#{staffInformation.staffage},#{staffInformation.staffsex},#{staffInformation.educationBackground},
+        #{staffInformation.duty},#{staffInformation.idcard},#{staffInformation.address},#{staffInformation.phonenumber})
+    </insert>
+<!--    实现分页查询-->
+    <select id="stafflist" resultMap="staffmap"  parameterType="int">
+        select *from Staff_information limit #{currentpage},6
+    </select>
+<!--    查询员工数量总数-->
+    <select id="staffcount" resultType="int">
+        select count(*) from Staff_information;
+    </select>
+    <select id="findstaff" resultType="com.chailong.pojo.StaffInformation">
+        select * from Staff_information where StaffId=#{findstaffbyid};
+    </select>
+    <update id="staffinfoupdate">
+        update Staff_information set staffname=#{staffInformation.staffname},staffage=#{staffInformation.staffage}
+        ,staffsex=#{staffInformation.staffsex},educationBackground=#{staffInformation.educationBackground},duty=#{staffInformation.duty}
+        ,idcard=#{staffInformation.idcard},address=#{staffInformation.address},phonenumber=#{staffInformation.phonenumber}
+        where staffId=#{staffInformation.staffId}
+    </update>
+    <update id="updateduty">
+        update Staff_information set duty=#{duty}
+        where staffId=#{staffid}
+    </update>
+    <delete id="deletestaffinfo">
+        delete from Staff_information
+        where staffId=#{staffid}
+    </delete>
+    <select id="selectALlstaff" resultMap="staffmap">
+         select *from Staff_information;
+    </select>
+    <select id="selectStaffbyduty" resultMap="staffmap">
+        select *from Staff_information where duty is NULL ;
+    </select>
+</mapper>

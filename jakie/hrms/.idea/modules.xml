@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/hrms.iml" filepath="$PROJECT_DIR$/hrms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hrms_back/hrms_back.iml" filepath="$PROJECT_DIR$/hrms_back/hrms_back.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hrms_common/hrms_common.iml" filepath="$PROJECT_DIR$/hrms_common/hrms_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hrms_interface/hrms_interface.iml" filepath="$PROJECT_DIR$/hrms_interface/hrms_interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hrms_mobile/hrms_mobile.iml" filepath="$PROJECT_DIR$/hrms_mobile/hrms_mobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hrms_provider/hrms_provider.iml" filepath="$PROJECT_DIR$/hrms_provider/hrms_provider.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chailong.dao.StaffloginDao">
+    <resultMap id="stafflog" type="com.chailong.pojo.Stafflogin">
+        <result property="account" column="account"></result>
+        <result property="password" column="password"></result>
+        <association property="staffInformation" column="staffid" javaType="com.chailong.pojo.StaffInformation"
+                     select="getstaff"></association>
+    </resultMap>
+    <select id="getstaff" resultType="com.chailong.pojo.StaffInformation">
+        select * from Staff_information where StaffId=#{staffid};
+    </select>
+    <select id="getstaffinfobyaccount" resultType="int">
+        select count(*) from staff_log where account=#{account};
+    </select>
+    <select id="vertifystaff" resultMap="stafflog">
+        select * from staff_log where account=#{account} and password=#{password};
+    </select>
+    <insert id="addnewstafflofinfo">
+        insert into staff_log(account,password,staffid)
+        values
+        (#{account},#{password},#{staffid})
+    </insert>
+    <select id="getstaffbyid" resultMap="stafflog">
+        select * from staff_log where staffid=#{staffid}
+    </select>
+</mapper>

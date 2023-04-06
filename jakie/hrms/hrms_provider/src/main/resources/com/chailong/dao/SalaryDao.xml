@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chailong.dao.SalaryDao">
+    <resultMap id="salaryMap" type="com.chailong.pojo.Salary">
+        <result property="salaryId" column="salaryId"></result>
+        <result property="salaryyear" column="salaryyear"></result>
+        <result property="salarymouth" column="salarymouth"></result>
+        <result property="salarynum" column="salarynum"></result>
+        <result property="salarystatue" column="salarystatue"></result>
+        <association property="staffInformation" column="staffid" javaType="com.chailong.pojo.StaffInformation"
+                     select="getstaff"></association>
+    </resultMap>
+    <select id="getstaff" resultType="com.chailong.pojo.StaffInformation">
+        select * from Staff_information where StaffId=#{staffid};
+    </select>
+    <select id="getsalarybydate" resultMap="salaryMap">
+        select *from Salary where salaryyear=#{salaryyear} and salarymouth=#{salarymouth};
+    </select>
+    <select id="getallsalaryinfo" resultMap="salaryMap">
+        select *from Salary;
+    </select>
+    <select id="getallsalaryinfowithid" resultMap="salaryMap">
+        select *from Salary where salaryyear=#{salaryyear} and salarymouth=#{salarymouth} and staffid=#{staffid};
+    </select>
+    <insert id="addnewSalaryInformation">
+        insert into Salary(staffid,salaryyear,salarymouth,salarynum,salarystatue)
+        values
+        (
+        #{salaryinfo.staffInformation.staffId},
+        #{salaryinfo.salaryyear},#{salaryinfo.salarymouth},#{salaryinfo.salarynum},#{salaryinfo.salarystatue}
+        )
+    </insert>
+    <update id="updateSalaryinfo">
+         update Salary set  salarystatue=#{salarystatue}
+         where salaryyear=#{salaryyear} and salarymouth=#{salarymouth} and salaryId=#{salaryId}
+    </update>
+    <delete id="deletesalaryinfo">
+        delete from Salary
+         where salaryyear=#{salaryyear} and salarymouth=#{salarymouth}
+    </delete>
+</mapper>

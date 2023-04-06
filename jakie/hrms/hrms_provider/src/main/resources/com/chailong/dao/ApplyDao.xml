@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chailong.dao.ApplyDao">
+    <resultMap id="applymap" type="com.chailong.pojo.Apply">
+        <result property="account" column="account"></result>
+        <result property="applyname" column="applyname"></result>
+        <result property="applysex" column="applysex"></result>
+        <result property="applyage" column="applyage"></result>
+        <result property="applyeducation" column="applyeducation"></result>
+        <result property="appplyduty" column="appplyduty"></result>
+        <result property="applyidcard" column="applyidcard"></result>
+        <result property="applyaddress" column="applyaddress"></result>
+        <result property="applyphonenumber" column="applyphonenumber"></result>
+        <result property="applystatue" column="applystatue"></result>
+    </resultMap>
+    <select id="getApplyinfobyaccount" resultMap="applymap">
+         select * from Apply where account=#{account};
+    </select>
+    <insert id="addnewapplyInformation">
+        insert into Apply(account,applyname,applysex,applyage,applyeducation,applyidcard,applyaddress,applyphonenumber,applystatue)
+        values
+        (
+        #{applyinfo.account},
+        #{applyinfo.applyname},
+        #{applyinfo.applysex},
+        #{applyinfo.applyage},
+        #{applyinfo.applyeducation},
+        #{applyinfo.applyidcard},
+        #{applyinfo.applyaddress},
+        #{applyinfo.applyphonenumber},
+        "待审批 "
+        )
+    </insert>
+    <select id="selectbystatue" resultMap="applymap">
+           select * from Apply where applystatue="待审批";
+    </select>
+    <delete id="deletebyid">
+          delete from Apply
+        where account=#{account}
+    </delete>
+    <update id="updateapply">
+        update Apply set applystatue=#{applystatue}
+        where account=#{account}
+    </update>
+</mapper>

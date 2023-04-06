@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="hrms_back:war">
+    <output-path>$PROJECT_DIR$/hrms_back/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>hrms_back</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="hrms_back-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="hrms_back:war exploded" />
+    </root>
+  </artifact>
+</component>

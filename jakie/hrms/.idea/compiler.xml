@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="hrms_mobile" />
+        <module name="hrms_interface" />
+        <module name="hrms_common" />
+        <module name="hrms_provider" />
+        <module name="hrms_back" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="hrms" target="1.8" />
+      <module name="hrms_back" target="1.7" />
+      <module name="hrms_backend" target="1.8" />
+      <module name="hrms_common" target="1.8" />
+      <module name="hrms_interface" target="1.8" />
+      <module name="hrms_mobile" target="1.7" />
+      <module name="hrms_provider" target="1.8" />
+      <module name="hrms_ser_provider" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="hrms_mobile:war">
+    <output-path>$PROJECT_DIR$/hrms_mobile/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>hrms_mobile</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="hrms_mobile-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="hrms_mobile:war exploded" />
+    </root>
+  </artifact>
+</component>

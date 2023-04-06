@@ -1,0 +1,7 @@
+0:0:0:0:0:0:0:1 - - [04/Jun/2022:08:47:49 +0800] "GET /mainpage.jsp HTTP/1.1" 200 7833 http-bio-8087-exec-1 87
+0:0:0:0:0:0:0:1 - - [04/Jun/2022:08:47:49 +0800] "GET /page/welcome.jsp HTTP/1.1" 200 3180 http-bio-8087-exec-3 14
+0:0:0:0:0:0:0:1 - - [04/Jun/2022:08:47:51 +0800] "GET / HTTP/1.1" 200 2569 http-bio-8087-exec-4 15
+0:0:0:0:0:0:0:1 - - [04/Jun/2022:08:47:51 +0800] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-8087-exec-5 45
+0:0:0:0:0:0:0:1 - - [04/Jun/2022:08:47:55 +0800] "POST /gologin/adminlogin HTTP/1.1" 200 6 http-bio-8087-exec-6 261
+0:0:0:0:0:0:0:1 - - [04/Jun/2022:08:47:55 +0800] "GET /mainpage.jsp HTTP/1.1" 200 7837 http-bio-8087-exec-7 4
+0:0:0:0:0:0:0:1 - - [04/Jun/2022:08:47:55 +0800] "GET /page/welcome.jsp HTTP/1.1" 200 3182 http-bio-8087-exec-8 2
